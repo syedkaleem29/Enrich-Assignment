@@ -21,7 +21,7 @@ void main()
 		{
 			for(j=i+1;j<n;j++)
 			{
-				if(mat[j][i]>0)
+				if(mat[j][i]!=0)
 				{
 					c++;
 					break;
