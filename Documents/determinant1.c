@@ -69,6 +69,6 @@ void main()
 	{
 		ans=ans*-1*c;
 	}
-	//The value is printer
+	//The determinant of the matrix is printed
 	printf("The value of determinant is %f\n",ans);
 }
