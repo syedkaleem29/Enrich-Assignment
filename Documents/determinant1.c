@@ -48,10 +48,7 @@ void main()
 				mat[j][k]=s;
 			}						
 		}
-<<<<<<< HEAD
-=======
 		//Code for gauss elimination
->>>>>>> 0510b88ae44c8125afa18b5d8a7cc0eccbdd4077
 		for(j=i+1;j<n;j++)
 		{	
 			dnum=mat[j][i];
