@@ -39,7 +39,6 @@ void main()
 				mat[j][k]=s;
 			}						
 		}
-		
 		for(j=i+1;j<n;j++)
 		{	
 			dnum=mat[j][i];
@@ -47,7 +46,6 @@ void main()
 			for(k=0;k<n;k++)
 			{	
 				mat[j][k]=mat[j][k]-(mul*mat[i][k]);		
-				
 			}
 		}
 		ans=ans*mat[i][i];	
