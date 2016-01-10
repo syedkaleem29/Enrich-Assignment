@@ -38,7 +38,7 @@ void main()
 		{
 			a=n-1;
 		}
-		//If position moves to the right of the top column then it is moved to the first column
+		//If position moves to the right of the last column then it is moved to the first column
 		if(b==n)
 		{
 			b=0;
