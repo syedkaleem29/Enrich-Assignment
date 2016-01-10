@@ -27,7 +27,7 @@ void main()
 		a=a-1;
 		b=b+1;
 		//If mat[0][n-1] is moved then changing would result in mat[-1][n]
-		//In such case we have to one position down to a[1][n-1]		
+		//In such case we have to move one position down to mat[1][n-1]		
 		if(a==-1 && b==n)
 		{
 			a=1;
