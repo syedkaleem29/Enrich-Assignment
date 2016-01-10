@@ -7,7 +7,7 @@
 //Example consider an array [1,2,3]
 //There are 2^3-1=7 possible combinations
 //The reverse binary number from 1 to 7 can represent all possible combination
-//Number Binary Number combination
+//    Number 	Reverse Binary Number Combination
 //	1		100		1
 //	2		010		2
 //	3		110		2 1
