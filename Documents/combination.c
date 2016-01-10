@@ -10,7 +10,7 @@
 //    Number 	Reverse Binary Number Combination
 //	1		100		1
 //	2		010		2
-//	3		110		2 1
+//	3		110		1 2
 //	4		001		3
 //	5		101		1 3
 //	6		011		2 3
