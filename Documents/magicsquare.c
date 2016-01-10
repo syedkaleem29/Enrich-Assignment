@@ -23,9 +23,9 @@ void main()
 	//Placing other elements of the matrix using the siamese method
 	for(num=2;num<=n*n;num++)
 	{
-		//Moving one place top-right
-		a=a-1;
-		b=b+1;
+		//Moving one place to top-right
+		a--;
+		b++;
 		//If mat[0][n-1] is moved then changing would result in mat[-1][n]
 		//In such case we have to move one position down to mat[1][n-1]		
 		if(a==-1 && b==n)
