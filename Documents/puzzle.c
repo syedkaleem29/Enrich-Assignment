@@ -70,6 +70,22 @@ void swap(int row,int col,char swapdir, int array[][4])
 		array[row+1][col]=temp;
 	}
 }
+void checkCompletion(int array[][4])
+{
+	int i,j;
+	int num=1;
+	int flag=0;
+	for(i=0;i<4;i++)
+	{
+		for(j=0;j<4;j++)
+		{
+			if(array[i][j]==num++||array[3][3]==0)
+			{
+				printf("Completed\n");
+			}
+		}
+	}
+}
 void main()
 {
 	int row,col;
@@ -88,6 +104,7 @@ void main()
 		}
 		findEmpty(&row,&col,array);
 		swap(row,col,swapdir,array);
+		checkCompletion(array);
 	}
 }
 
