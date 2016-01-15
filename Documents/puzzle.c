@@ -74,19 +74,17 @@ int checkCompletion(int array[][4])
 {
 	int i,j;
 	int num=1;
-	int flag=1;
 	for(i=0;i<4;i++)
 	{
 		for(j=0;j<4;j++)
 		{
 			if(array[i][j]==num && array[3][3]==0)
 			{
-				flag++;
 				num++;
 			}
 		}
 	}
-	if(flag==16)
+	if(num==16)
 	{
 		return 1;
 	}
