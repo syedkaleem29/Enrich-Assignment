@@ -70,7 +70,7 @@ void swap(int row,int col,char swapdir, int array[][4])
 		array[row+1][col]=temp;
 	}
 }
-void checkCompletion(int array[][4])
+int checkCompletion(int array[][4])
 {
 	int i,j;
 	int num=1;
@@ -81,20 +81,29 @@ void checkCompletion(int array[][4])
 		{
 			if(array[i][j]==num++||array[3][3]==0)
 			{
-				printf("Completed\n");
+				flag++;
 			}
 		}
+	}
+	if(flag==16)
+	{
+		return 1;
 	}
 }
 void main()
 {
-	int row,col;
+	int row,col,comp;
 	char swapdir;
-	int array[4][4]={1,2,3,4,5,6,7,8,9,0,10,11,12,13,14,15};
+	int array[4][4]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0};
 	while(1)
 	{	
 		system("clear");
 		printArray(array);
+		if(comp==1)
+		{
+			printf("completed\n");
+			return;
+		}
 		printf("Enter the Character(Caps Only)\n");
 		scanf("%c",&swapdir);
 		if(swapdir=='Q')
@@ -104,7 +113,7 @@ void main()
 		}
 		findEmpty(&row,&col,array);
 		swap(row,col,swapdir,array);
-		checkCompletion(array);
+		comp=checkCompletion(array);
 	}
 }
 
