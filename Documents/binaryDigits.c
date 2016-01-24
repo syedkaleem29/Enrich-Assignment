@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<math.h>
 int binaryDigits(int);
 void main()
 {
@@ -10,11 +9,11 @@ void main()
 }
 int binaryDigits(int num)
 {
-	int pow2=0,p=0;
-	while(pow2<=num)
+	int count=0;
+	while(num!=0)
 	{
-		p++;
-		pow2=pow(2,p);
+		num=num/2;
+		count++;
 	}
-	return p;
+	return count;
 }
