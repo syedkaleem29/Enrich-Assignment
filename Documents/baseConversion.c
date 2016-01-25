@@ -1,5 +1,6 @@
 #include<stdio.h>
 void baseConversion(int,int);
+void print(int,char *);
 void main()
 {
 	int num,base;
@@ -7,14 +8,14 @@ void main()
 	scanf("%d",&num);
 	printf("Enter the base:");
 	scanf("%d",&base);
-	if(base>2 || base<=36 )
+	if(base>=2 || base<=36 )
 	{
 		baseConversion(num,base);
 	}
 }
 void baseConversion(int num,int base)
 {
-	int quo=1,rem,i=0,j;
+	int quo=1,rem,i=0;
 	char conv[128];
 	while(quo!=0)
 	{
@@ -30,9 +31,14 @@ void baseConversion(int num,int base)
 		}
 		num=quo;
 	}
-	for(j=i-1;j>=0;j--)
+	print(i,conv);
+}
+void print(int n,char conv[])
+{
+	int i;
+	for(i=n-1;i>=0;i--)
 	{
-		printf("%c",conv[j]);
+		printf("%c",conv[i]);
 	}
 	printf("\n");
 }
