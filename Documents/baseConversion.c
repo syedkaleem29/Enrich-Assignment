@@ -7,7 +7,10 @@ void main()
 	scanf("%d",&num);
 	printf("Enter the base:");
 	scanf("%d",&base);
-	baseConversion(num,base);
+	if(base>2 || base<=36 )
+	{
+		baseConversion(num,base);
+	}
 }
 void baseConversion(int num,int base)
 {
