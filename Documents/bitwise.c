@@ -1,26 +1,48 @@
 #include<stdio.h>
-void given(unsigned char);
-void bitset(unsigned char ,int);
-void bitunset(unsigned char ,int);
-void toggle(unsigned char ,int);
-void toggleExcept(unsigned char *,int);
-void right(unsigned char );
-void left(unsigned char );
-void swap(unsigned char );
+unsigned char given(unsigned char);
+unsigned char bitset(unsigned char ,int);
+unsigned char bitunset(unsigned char ,int);
+unsigned char toggle(unsigned char ,int);
+unsigned char toggleExcept(unsigned char *,int);
+unsigned char right(unsigned char );
+unsigned char left(unsigned char );
+unsigned char swap(unsigned char );
 void print(unsigned char );
+void printOutput(unsigned char );
 void main()
 {
-	unsigned char num=11;
+	unsigned char num=11,numout;
 	int index=2;
-	given(num);
-	bitset(num,index);
-	bitunset(num,index);
-	toggle(num,index);
-	toggleExcept(&num,index);
+	printf("Given Number ");
+	numout=given(num);
+	printOutput(numout);
+	printf("Bit 2 set to 1: ");
+	numout=bitset(num,index);
+	printOutput(numout);
+	printf("Bit 2 set to 0: ");
+	numout=bitunset(num,index);
+	printOutput(numout);	
+	printf("Toggle Bit 2: ");
+	numout=toggle(num,index);
+	printOutput(numout);
+	printf("Toggle Except bit 2: ");
+	numout=toggleExcept(&num,index);
+	printOutput(numout);	
 	num=11;
-	right(num);
-	left(num);
-	swap(num);
+	printf("Rotate Right ");
+	numout=right(num);
+	printOutput(numout);
+	printf("Rotate left ");
+	numout=left(num);
+	printOutput(numout);
+	printf("Swap Nibble: ");
+	numout=swap(num);
+	printOutput(numout);
+}
+void printOutput(unsigned char numout)
+{
+	print(numout);
+	printf("\nDecimal Value: %d\n\n",numout);
 }
 void print(unsigned char num)
 {
@@ -40,62 +62,60 @@ void print(unsigned char num)
 		n=n/2;
 	}
 }
-void given(unsigned char num)
+unsigned char given(unsigned char num)
 {
-	printf("Given Number:");
-	print(num);
-	printf("\nDecimal Value:%d\n\n",num);	
+	return num;
 }
-void bitset(unsigned char num,int index)
+unsigned char bitset(unsigned char num,int index)
 {
 	int flag=1;
 	num=num|(flag<<index);
-	printf("Bit 2 set to 1:");
-	print(num);
-	printf("\nDecimal Value: %d\n\n",num);
+	return num;
 }
-void bitunset(unsigned char num,int index)
+unsigned char bitunset(unsigned char num,int index)
 {
 	int flag=1;
 	num=num&~(flag<<index);
-	printf("Bit 2 set to 0: ");
-	print(num);
-	printf("\nDecimal Value: %d\n\n",num);
+	return num;
 }
-void toggle(unsigned char num,int index)
+unsigned char toggle(unsigned char num,int index)
 {
 	int flag=1;
 	num=~num^~(flag<<index);
-	printf("Toggle Bit 2: ");
-	print(num);		
-	printf("\nDecimal Value %d\n\n",num);
+	return num;
 }
-void toggleExcept(unsigned char *num,int index)
+unsigned char toggleExcept(unsigned char *num,int index)
 {
 	int flag=1;	
 	*num=~*num|(flag<<index);
-	printf("Toggle Except bit 2: ");
-	print(*num);
-	printf("\nDecimal Value %d\n\n",*num);
+	return *num;	
 }
-void right(unsigned char num)
+unsigned char right(unsigned char num)
 {	
-	num=(num>>1)|(num<<7);
-	printf("Rotate Right ");
-	print(num);	
-	printf("\nDecimal Value:%d\n\n",num);
+	if(num%2==0)
+	{
+		num=num/2;
+	}
+	else
+	{
+		num=128+(num/2);
+	}
+	return num;
 }
-void left(unsigned char num)
+unsigned char left(unsigned char num)
 {	
-	num=(num<<1)|(num>>7);
-	printf("Rotate left ");
-	print(num);	
-	printf("\nDecimal Value:%d\n\n",num);
+	if(num>=128)
+	{
+		num=1+(num*2);
+	}
+	else
+	{
+		num=num*2;
+	}
+	return num;	
 }
-void swap(unsigned char num)
+unsigned char swap(unsigned char num)
 {
 	num=(num<<4)|(num>>4);
-	printf("Swap Nibble: ");
-	print(num);
-	printf("\nDecimal Value:%d\n\n",num);
+	return num;	
 }
