@@ -81,7 +81,7 @@ unsigned char bitunset(unsigned char num,int index)
 unsigned char toggle(unsigned char num,int index)
 {
 	int flag=1;
-	num=~num^~(flag<<index);
+	num=num^(flag<<index);
 	return num;
 }
 unsigned char toggleExcept(unsigned char *num,int index)
