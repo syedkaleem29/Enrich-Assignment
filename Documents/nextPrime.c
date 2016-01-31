@@ -10,8 +10,8 @@ void main()
 }
 int nextPrime(int num)
 {
-	int j=2,flag=1;
-	if(num==1|| num==0)
+	int j=3;
+	if(num<2)
 	{
 		return 2;
 	}
@@ -21,14 +21,10 @@ int nextPrime(int num)
 		if(num%j==0)
 		{
 			num=num+2;
-			j=2;
+			j=3;
 			continue;
 		}
-		j=j+1;
-		flag=1;
+		j=j+2;
 	}
-	if(flag==1)
-	{
-		return num;
-	}
+	return num;
 }
