@@ -16,19 +16,17 @@ int nextPrime(int num)
 		return 2;
 	}
 	num=(num%2)==0?num+1:num+2;
-	for(i=num;;i=i+2)
-	{
+	for(j=2;j<=sqrt(num);j++)
+	{	
 		flag=1;
-		for(j=2;j<=sqrt(num);j++)
+		if(i%j==0)
 		{
-			if(i%j==0)
-			{
-				flag=0;
-			}
+			flag=0;
+			num=num+2;
 		}
 		if(flag==1)
 		{
-			return i;		
+			return num;		
 		}
 	}
 }
