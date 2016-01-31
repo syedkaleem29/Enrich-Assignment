@@ -10,8 +10,13 @@ void main()
 }
 int nextPrime(int num)
 {
+<<<<<<< HEAD
 	int i,j,flag;
 	if(num==1|| num==0)
+=======
+	int j=3;
+	if(num<2)
+>>>>>>> origin/master
 	{
 		return 2;
 	}
@@ -21,6 +26,7 @@ int nextPrime(int num)
 		flag=1;
 		for(j=2;j<=sqrt(num);j++)
 		{
+<<<<<<< HEAD
 			if(i%j==0)
 			{
 				flag=0;
@@ -30,5 +36,13 @@ int nextPrime(int num)
 		{
 			return i;		
 		}
+=======
+			num=num+2;
+			j=3;
+			continue;
+		}
+		j=j+2;
+>>>>>>> origin/master
 	}
+	return num;
 }
