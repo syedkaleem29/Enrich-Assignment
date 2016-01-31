@@ -10,18 +10,6 @@ void main()
 }
 int nextPrime(int num)
 {
-	#include<stdio.h>
-#include<math.h>
-int nextPrime(int num);
-void main()
-{
-	int num,prime;
-	scanf("%d",&num);
-	prime=nextPrime(num);
-	printf("The Next Prime Number is %d",prime);
-}
-int nextPrime(int num)
-{
 	int j=3;
 	if(num<2)
 	{
@@ -39,5 +27,4 @@ int nextPrime(int num)
 		j=j+2;
 	}
 	return num;
-}
 }
