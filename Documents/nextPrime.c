@@ -10,21 +10,25 @@ void main()
 }
 int nextPrime(int num)
 {
-	int j=3;
-	if(num<2)
+	int i,j,flag;
+	if(num==1|| num==0)
 	{
 		return 2;
 	}
 	num=(num%2)==0?num+1:num+2;
-	while(j<=sqrt(num))
+	for(i=num;;i=i+2)
 	{
-		if(num%j==0)
+		flag=1;
+		for(j=2;j<=sqrt(num);j++)
 		{
-			num=num+2;
-			j=3;
-			continue;
+			if(i%j==0)
+			{
+				flag=0;
+			}
 		}
-		j=j+2;
+		if(flag==1)
+		{
+			return i;		
+		}
 	}
-	return num;
 }
