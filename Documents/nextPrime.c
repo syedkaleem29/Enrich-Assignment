@@ -19,7 +19,7 @@ int nextPrime(int num)
 	for(i=2;i<=sqrt(num);i++)
 	{	
 		flag=1;
-		if(i%j==0)
+		if(num%i==0)
 		{
 			flag=0;
 			num=num+2;
