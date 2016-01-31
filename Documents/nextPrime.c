@@ -10,13 +10,13 @@ void main()
 }
 int nextPrime(int num)
 {
-	int i,j,flag;
+	int i,flag;
 	if(num==1|| num==0)
 	{
 		return 2;
 	}
 	num=(num%2)==0?num+1:num+2;
-	for(j=2;j<=sqrt(num);j++)
+	for(i=2;i<=sqrt(num);i++)
 	{	
 		flag=1;
 		if(i%j==0)
