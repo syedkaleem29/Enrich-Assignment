@@ -14,14 +14,14 @@ int main()
 }
 char* substring(char *str)
 {
-    int len=strlen(str),slen,i,j,c=1,order=0,flag=0,s=0;
-    char *res=malloc(len*sizeof(char));
+    int len=strlen(str),slen,i,j,c=1,order=0,flag=0;
+    char *res=malloc(sizeof(char));
     char *substr=malloc(sizeof(char));
     substr[0]=str[0];
     for(i=1;i<len;i++)
     {
         flag=0;
-        for(j=s;j<i;j++)
+        for(j=0;j<i;j++)
         {
             if(str[i]==substr[j])
             {
@@ -31,7 +31,7 @@ char* substring(char *str)
                     res=substr;
                     order=slen;
                 }
-                substr=malloc((len-slen)*sizeof(char));
+                substr=malloc(sizeof(char));
                 c=0;
                 substr[c++]=str[i];
                 break;
@@ -44,7 +44,7 @@ char* substring(char *str)
         if(flag==1)
         {
             substr[c++]=str[i];
-        }
+   		}
     }
     slen=strlen(substr);
     if(order<slen)
@@ -62,4 +62,3 @@ int strlen(char *str)
     }
     return i;
 }
-
