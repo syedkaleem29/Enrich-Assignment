@@ -44,7 +44,8 @@ char* substring(char *str)
         if(flag==1)
         {
             substr[c++]=str[i];
-   	    }
+        
+        }
     }
     slen=strlen(substr);
     if(order<slen)
