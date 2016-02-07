@@ -9,7 +9,7 @@ int main()
     scanf("%s",str);
     res=substring(str);
     printf("%s\n",res);
-	printf("%d\n",strlen(res));
+    printf("%d\n",strlen(res));
     return 0;
 }
 char* substring(char *str)
