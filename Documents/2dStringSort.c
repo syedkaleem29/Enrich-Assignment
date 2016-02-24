@@ -24,40 +24,63 @@ int main()
 }
 void sort(char **numarray,int n)
 {
-    int *sum=malloc(n*sizeof(int)),i,j,c,s,temp,pivot,flag=0,newpos;
+    int *len=malloc(n*sizeof(int)),i,j,c,s,temp,pivot,flag=0,newpos;
     char *ctemp;
     for(i=0;i<n;i++)
     {
         c=0;
-        s=0;
         while(numarray[i][c]!='\0')
         {
-            s+=numarray[i][c];
             c++;
         }
-        sum[i]=s;
+        len[i]=c;
     }
     for(i=0;i<n-1;i++)
     {
-        pivot=sum[i];
+        pivot=len[i];
         flag=0;
         for(j=i+1;j<n;j++)
         {
-            if(pivot>sum[j])
+            if(pivot>len[j])
             {
-                pivot=sum[j];
+                pivot=len[j];
                 newpos=j;
                 flag=1;
             }
         }
         if(flag==1)
         {
-            temp=sum[i];
-            sum[i]=pivot;
-            sum[newpos]=temp;
+            temp=len[i];
+            len[i]=pivot;
+            len[newpos]=temp;
             ctemp=numarray[i];
             numarray[i]=numarray[newpos];
             numarray[newpos]=ctemp;
+        }
+    }
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(len[i]==len[j])
+            {
+                c=0;
+                while(numarray[i][c]!='\0')
+                {
+                    if(numarray[i][c]>numarray[j][c])
+                    {
+                          ctemp=numarray[i];
+                          numarray[i]=numarray[j];
+                          numarray[j]=ctemp;
+                          break;
+                    }
+                    c++;
+                }
+            }
+            else
+            {
+                break;
+            }
         }
     }
 }
