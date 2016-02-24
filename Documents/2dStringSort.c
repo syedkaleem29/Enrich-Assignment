@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 void sort(char **,int);
+void samelensort(char **,int *,int);
 int main()
 {
     int n,i;
@@ -58,10 +59,18 @@ void sort(char **numarray,int n)
             numarray[newpos]=ctemp;
         }
     }
+    samelensort(numarray,len,n);
+}
+void samelensort(char **numarray,int *len,int n)
+{
+    int i,j,c=0,flag=0,newpos;
+    char *ctemp;
     for(i=0;i<n-1;i++)
     {
-        for(j=i+1;j<n;j++)
-        {
+       for(j=i+1;j<n;j++)
+       {
+            flag=0;
+            newpos=0;
             if(len[i]==len[j])
             {
                 c=0;
@@ -69,18 +78,24 @@ void sort(char **numarray,int n)
                 {
                     if(numarray[i][c]>numarray[j][c])
                     {
-                          ctemp=numarray[i];
-                          numarray[i]=numarray[j];
-                          numarray[j]=ctemp;
-                          break;
+                        flag=1;
+                        newpos=j;
+                        break;
+                    }
+                    else if(numarray[i][c]<numarray[j][c])
+                    {
+                        flag=0;
+                        break;
                     }
                     c++;
                 }
+                if(flag==1)
+                {
+                    ctemp=numarray[i];
+                    numarray[i]=numarray[j];
+                    numarray[j]=ctemp;
+                }
             }
-            else
-            {
-                break;
-            }
-        }
+       }
     }
 }
