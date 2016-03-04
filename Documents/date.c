@@ -17,7 +17,7 @@ int main()
     int year,preyear,month,preMonth,day,dayIndex,difference,n;
     printf("Enter date:\n");
     scanf("%s",date);
-    printf("Enter new date:\n");
+    printf("Enter new date:(less than previous)\n");
     scanf("%s",newdate);
     printf("Enter n:\n");
     scanf("%d",&n);
@@ -134,7 +134,7 @@ char* day_before_n(int n,char *date)
             }
             else
             {
-                day=noday[month]-n;
+                day=noday[i]-(n-1);
                 month=i;
                 break;
             }
